@@ -76,6 +76,12 @@ end
 def films_by_id
   # What are the titles of the films with id 1119, 1595, 1768?
   execute(<<-SQL)
+    select
+      title
+    from
+      movies
+    where
+      id in (1119, 1595, 1768)
   SQL
 end
 

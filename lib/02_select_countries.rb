@@ -37,6 +37,12 @@ def high_population_gdps
   # Give the names and the per capita GDPs of countries with a population
   # of at least 200 million.
   execute(<<-SQL)
+    select
+      name, gdp/population
+    from
+      countries
+    where
+      population >= 200000000
   SQL
 end
 

@@ -25,6 +25,11 @@ def large_countries
   # Show the names of the countries that have a population of at least
   # 200 million. 200 million is 200,000,000 (eight zeros).
   execute(<<-SQL)
+    select
+      name
+    from
+      countries
+    where population >= 200000000
   SQL
 end
 

@@ -104,5 +104,11 @@ end
 def nobel_johns
   # Show the winners with first name John
   execute(<<-SQL)
+    select
+      winner
+    from
+      nobels
+    where
+      winner like 'John%'
   SQL
 end

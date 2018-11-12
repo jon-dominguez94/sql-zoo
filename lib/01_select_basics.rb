@@ -90,5 +90,11 @@ def just_the_right_size
   # with an area between 200,000 and 250,000.
   # BETWEEN allows range checking - note that it is inclusive.
   execute(<<-SQL)
+    select
+      name, area/1000
+    from
+      countries
+    where
+      area between 200000 and 250000
   SQL
 end

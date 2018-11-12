@@ -76,6 +76,12 @@ end
 def starts_with_g
   # Show each country that begins with the letter G
   execute(<<-SQL)
+    select
+      name
+    from
+      countries
+    where
+      name like 'G%'
   SQL
 end
 

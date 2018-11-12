@@ -100,6 +100,12 @@ end
 def casablanca_id
   # What is the id of the film 'Casablanca'?
   execute(<<-SQL)
+    select
+      id
+    from
+      movies
+    where
+      title = 'Casablanca'
   SQL
 end
 

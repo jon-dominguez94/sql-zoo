@@ -128,5 +128,20 @@ def sparse_continents
   # population.
   # Hint: Sometimes rewording the problem can help you see the solution.
   execute(<<-SQL)
+    select
+      name, continent, population
+    from
+      countries
+    where
+      continent in (
+        select
+          continent
+        from
+          countries
+        group by
+          continent
+        having
+          max(population) < 25000000
+      )
   SQL
 end

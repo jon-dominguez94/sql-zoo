@@ -49,6 +49,14 @@ def small_and_wealthy
   # Show the name and continent of countries where the area is less than 2,000
   # and the gdp is more than 5,000,000,000.
   execute(<<-SQL)
+    select
+      name, continent
+    from
+      countries
+    where
+      area < 2000
+        and
+      gdp > 5000000000
   SQL
 end
 

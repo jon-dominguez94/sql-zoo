@@ -143,5 +143,6 @@ def sparse_continents
         having
           max(population) < 25000000
       )
+
   SQL
 end

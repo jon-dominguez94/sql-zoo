@@ -77,6 +77,18 @@ end
 def films_and_stars_from_sixty_two
   # List the title and leading star of every 1962 film.
   execute(<<-SQL)
+    select
+      m.title, a.name
+    from
+      movies as m
+    join
+      castings as c on m.id = c.movie_id
+    join
+      actors as a on a.id = c.actor_id
+    where
+      m.yr = 1962
+        and
+      c.ord = 1
   SQL
 end
 
